@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/earlyaccess/notosanstc.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="info">
+            <ol>
+                <li>
+                    <p>關於<span>Gas Price燃料價格</span>的設定，目前推薦<span>50Gwei</span>至<span>200Gwei</span></p>
+                </li>
+                <li>
+                    <p>根據<span>專案熱度</span>和你的<span>投資量</span>來決定這個數值，一般情況下<span>50Gwei</span>或<span>100Gwei</span>就足夠了。</p>
+                </li>
+                <li>
+                    <p>Gas Price超過一定價格後，再增加就沒多大意義了。</p>
+                </li>
+                <li>
+                    <p>關鍵的是<span>Gas Limit燃料供給上限</span>，這個數值<span>一定要設置的高一些</span>，<span>因多出來的部分會退回。</span></p>
+                </li>
+            </ol>
+        </div>
+        <h6 style="display:inline">1 ETH = 1000000000 Gwei , </h6>
+        <h6 style="display:inline">目前ETH價值<span id="ETHPV"></span>美金</h6>
+        <div class="excel">
+            <table class="table table-striped table-bordered table-responsive">
+                <thead class="thead-inverse">
+                    <tr>
+                        <th>Gas Limit</th>
+                        <th>Gas Price(Gwei)</th>
+                        <th>ETH(Gwei)</th>
+                        <th>Fee</th>
+                        <th>USD</th>
+                        <th>NTD</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td scope="row" width="20%"><input type="text" class="form-control" id="GasLimit"></td>
+                        <td width="20%"><input type="text" class="form-control" id="GasPrice"></td>
+                        <td width="20%" id="Gwei">0.000000000</td>
+                        <td width="20%" id="Fee">0.000000000</td>
+                        <td width="10%" id="USD">0.00</td>
+                        <td width="10%" id="NTD">0.00</td>
+                    </tr>
+
+                </tbody>
+            </table>
+            <button type="button" class="btn btn-primary" id="CheckBtn">計算</button>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
