@@ -23,8 +23,17 @@ xhr.onload = function () {
         document.querySelector('#USD').innerHTML = USD.toFixed(2);
         document.querySelector('#NTD').innerHTML = NTD.toFixed(2);
     }
-    let CheckBtn = document.querySelector('#CheckBtn');
-    CheckBtn.addEventListener('click', function () {
+    let checkBtn = document.querySelector('#checkBtn');
+    checkBtn.addEventListener('click', function () {
         Run();
+    });
+
+    let clearBtn = document.querySelector('#clearBtn');
+    clearBtn.addEventListener('click', function () {
+        document.querySelector('#Gwei').innerHTML = '0.000000000';
+        document.querySelector('#Fee').innerHTML = '0.000000000';
+        document.querySelector('#USD').innerHTML = '0.00';
+        document.querySelector('#NTD').innerHTML = '0.00';
+
     });
 }
