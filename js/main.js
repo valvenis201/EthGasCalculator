@@ -1,13 +1,13 @@
 let xhr = new XMLHttpRequest();
 
-xhr.open('get', 'https://api.coinmarketcap.com/v1/ticker/?convert=USD&limit=10', true);
+xhr.open('get', 'https://api.coinmarketcap.com/v1/ticker/ethereum/?convert=USD', true);
 
 xhr.send(null);
 
 xhr.onload = function () {
 
     let str = JSON.parse(xhr.responseText);
-    let ETHPV = str[1].price_usd;
+    let ETHPV = str[0].price_usd;
     document.querySelector('#ETHPV').innerHTML = ETHPV;
 
     function Run() {
