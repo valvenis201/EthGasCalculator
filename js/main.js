@@ -1,13 +1,13 @@
 let xhr = new XMLHttpRequest();
 
-xhr.open('get', 'https://api.coinmarketcap.com/v1/ticker/ethereum/?convert=USD', true);
+xhr.open('GET', 'https://api.coingecko.com/api/v3/coins/ethereum');
 
 xhr.send(null);
 
 xhr.onload = function () {
 
-    let str = JSON.parse(xhr.responseText);
-    let ETHPV = str[0].price_usd;
+    let data = JSON.parse(xhr.responseText);
+    let ETHPV = data['market_data']['current_price']['usd'];
     document.querySelector('#ETHPV').innerHTML = ETHPV;
 
     function Run() {
@@ -24,6 +24,7 @@ xhr.onload = function () {
         document.querySelector('#NTD').innerHTML = NTD.toFixed(2);
     }
     let checkBtn = document.querySelector('#checkBtn');
+
     checkBtn.addEventListener('click', function () {
         Run();
     });
@@ -37,3 +38,5 @@ xhr.onload = function () {
 
     });
 }
+
+
